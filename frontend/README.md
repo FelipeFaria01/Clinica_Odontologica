@@ -1,75 +1,193 @@
-# React + TypeScript + Vite
+# 🦷 Clínica Odontológica — Full Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web Full Stack desenvolvida para simular o site institucional de uma clínica odontológica, com foco em experiência do usuário, responsividade, organização de componentes e integração entre frontend e backend.
 
-Currently, two official plugins are available:
+O projeto apresenta os serviços da clínica, sua equipe de profissionais e um sistema de solicitação de agendamento integrado ao WhatsApp.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+> **Projeto demonstrativo desenvolvido para fins de estudo e portfólio.**
 
-## React Compiler
+## 📸 Demonstração
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Adicione aqui capturas de tela do projeto, apresentando as principais seções e a versão mobile.
 
-## Expanding the ESLint configuration
+**Demonstração online:** [em andamento]
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Funcionalidades
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Interface moderna e responsiva para desktop, tablet e dispositivos móveis.
+- Navegação entre as seções do site.
+- Apresentação dos serviços odontológicos.
+- Exibição dos profissionais da clínica.
+- Formulário de solicitação de agendamento.
+- Validação dos dados preenchidos pelo usuário.
+- Comunicação entre frontend e backend por API REST.
+- Integração com WhatsApp para encaminhamento da solicitação de agendamento.
+- Feedback visual durante o envio do formulário.
+- Animações e transições para melhorar a experiência de navegação.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tecnologias utilizadas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Frontend
+- **React:** construção de interfaces baseadas em componentes.
+- **TypeScript:** tipagem estática e maior segurança no desenvolvimento.
+- **Vite:** ambiente de desenvolvimento e build.
+- **Tailwind CSS:** estilização e responsividade.
+- **Framer Motion:** animações e transições.
+- **Lucide React:** biblioteca de ícones.
+- **React Hook Form:** gerenciamento de formulários.
+- **Zod:** validação de dados.
 
+### Backend
+- **Node.js:** ambiente de execução JavaScript.
+- **TypeScript:** desenvolvimento tipado.
+- **Fastify:** framework para construção da API REST.
+- **Zod:** validação das requisições.
+- **CORS:** controle de origens autorizadas.
+- **Helmet:** configuração de cabeçalhos de segurança.
+- **Rate Limit:** limitação de requisições.
+
+## 📁 Estrutura do projeto
+
+```text
+ClinicaOodontologica/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── assets/
+│   │   └── ...
+│   └── package.json
+│
+├── backend/
+│   ├── src/
+│   │   ├── routes/
+│   │   ├── controllers/
+│   │   ├── services/
+│   │   ├── schemas/
+│   │   ├── utils/
+│   │   ├── app.ts
+│   │   └── server.ts
+│   └── package.json
+│
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+*A estrutura acima é ilustrativa e deve ser ajustada para corresponder às pastas do repositório.*
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📲 Como funciona o agendamento?
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. O usuário acessa o site e preenche o formulário de agendamento.
+2. O frontend valida as informações fornecidas.
+3. Os dados são enviados ao backend por meio de uma requisição HTTP.
+4. O servidor realiza uma nova validação utilizando Zod.
+5. O backend organiza os dados em uma mensagem de agendamento.
+6. É gerado um link do WhatsApp contendo a mensagem formatada.
+7. O frontend recebe o link e direciona o usuário ao WhatsApp.
 
+**Importante:** o sistema não realiza o agendamento automaticamente. Ele facilita o contato entre o paciente e a clínica para que a solicitação seja confirmada.
+
+## 🔐 Segurança e validação
+
+O backend foi desenvolvido com medidas para aumentar a segurança e a confiabilidade da aplicação:
+
+- Validação das informações recebidas com Zod.
+- Limitação de requisições por meio de Rate Limit.
+- Proteção de cabeçalhos HTTP utilizando Helmet.
+- Configuração de CORS.
+- Limitação do tamanho das requisições.
+- Utilização de variáveis de ambiente para configurações sensíveis.
+- Tratamento de erros nas requisições.
+
+## ⚙️ Como executar o projeto
+
+### Pré-requisitos
+
+- Node.js instalado.
+- npm instalado.
+- Git instalado.
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
+cd SEU-REPOSITORIO
 ```
+
+### 2. Configure o frontend
+
+```bash
+npm install
+npm run dev
+```
+
+O frontend estará disponível, por padrão, em:
+
+`http://localhost:5173`
+
+### 3. Configure o backend
+
+Em outro terminal:
+
+```bash
+cd backend
+npm install
+```
+
+Crie um arquivo `.env` dentro da pasta `backend`:
+
+```env
+PORT=3000
+FRONTEND_URL=http://localhost:5173
+WHATSAPP_NUMBER=SEU_NUMERO
+```
+
+Substitua `SEU_NUMERO` pelo número de destino no formato internacional, incluindo o código do país e DDD, sem símbolos.
+
+Inicie o servidor:
+
+```bash
+npm run dev
+```
+
+A API estará disponível, por padrão, em:
+
+`http://localhost:3000`
+
+### 4. Endpoints da API
+
+| Método | Endpoint | Descrição |
+|---|---|---|
+| GET | `/health` | Verifica o funcionamento da API |
+| POST | `/api/agendamentos` | Valida os dados e gera o link de agendamento |
+
+## 🎯 Objetivo do projeto
+
+O principal objetivo foi aplicar conhecimentos de desenvolvimento Full Stack em um cenário próximo de uma necessidade comercial real.
+
+Durante o desenvolvimento, foram trabalhados conceitos como:
+
+- Componentização e reutilização de código.
+- Desenvolvimento de interfaces responsivas.
+- Gerenciamento de formulários.
+- Comunicação com APIs REST.
+- Validação de dados no cliente e no servidor.
+- Organização de responsabilidades no backend.
+- Integração com serviços externos.
+- Boas práticas de segurança e manutenção de código.
+
+## 📈 Aprendizados
+
+Este projeto contribuiu para o aprimoramento das minhas habilidades em React, TypeScript e desenvolvimento de APIs com Fastify.
+
+Também permitiu compreender melhor o fluxo completo de uma aplicação web, desde a interação do usuário com a interface até o processamento dos dados no servidor.
+
+## 👨‍💻 Autor
+
+**Felipe Rodrigo de Faria Mendes**
+
+Desenvolvedor Web | Frontend & Full Stack
+
+LinkedIn: [https://www.linkedin.com/in/feliperdrigomendes/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BjiGwsu8ST4ytawrSFn0UwA%3D%3D]
+
+---
+
+⭐ Projeto desenvolvido para fins educacionais e demonstração de habilidades em desenvolvimento web.

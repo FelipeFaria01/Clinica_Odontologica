@@ -69,7 +69,7 @@ export function Hero() {
 
           <div className="relative overflow-hidden rounded-[32px] border border-white bg-white p-3 shadow-2xl">
             <img
-              src="/public/dentista.png"
+              src="/src/assets/dentistamulher.png"
               alt="Dentista realizando atendimento"
               className="h-[520px] w-full rounded-[24px] object-cover"
             />

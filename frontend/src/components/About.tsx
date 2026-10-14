@@ -10,7 +10,7 @@ export function About() {
         <div className="relative">
           <div className="overflow-hidden rounded-[32px] shadow-xl">
             <img
-              src="/public/dentistamulher.png"
+              src="/src/assets/dentista.png"
               alt="Equipe da clínica odontológica"
               className="h-[520px] w-full object-cover"
             />

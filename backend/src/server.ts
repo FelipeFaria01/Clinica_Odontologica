@@ -11,9 +11,8 @@ async function start() {
       host: "0.0.0.0",
     });
 
-    console.log(
-      "Servidor rodando na porta 3000",
-    );
+    console.log(`Servidor rodando na porta ${process.env.PORT || 3000}`);
+    
   } catch (error) {
     app.log.error(error);
     process.exit(1);

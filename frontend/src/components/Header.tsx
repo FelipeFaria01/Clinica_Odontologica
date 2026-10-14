@@ -1,5 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import healthRedImg from '../assets/healthred.png';
 
 const navigation = [
   { name: "Início", href: "#inicio" },
@@ -16,7 +17,7 @@ export function Header() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         <a href="#inicio" className="flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl font-bold text-white">
-            <img src="src/assets/healthred.png" alt="coração com estetoscopio"/>
+           <img src={healthRedImg} alt="coração com estetoscópio" />
           </div>
 
           <div>

@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
+import dentistaMulherImg from '../assets/dentistamulher.png';
 
 export function Hero() {
   return (
@@ -69,10 +70,10 @@ export function Hero() {
 
           <div className="relative overflow-hidden rounded-[32px] border border-white bg-white p-3 shadow-2xl">
             <img
-              src="src/assets/dentistamulher.png"
-              alt="Dentista realizando atendimento"
-              className="h-[520px] w-full rounded-[24px] object-cover"
-            />
+            src={dentistaMulherImg}
+            alt="Dentista realizando atendimento"
+            className="h-[520px] w-full rounded-[24px] object-cover"
+/>
           </div>
 
           <div className="absolute -bottom-6 -left-6 rounded-2xl bg-white p-5 shadow-xl">

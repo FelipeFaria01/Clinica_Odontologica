@@ -1,3 +1,5 @@
+import dentistaImg from '../assets/dentista.png';
+
 export function About() {
   return (
     <section
@@ -9,11 +11,11 @@ export function About() {
         {/* Imagem */}
         <div className="relative">
           <div className="overflow-hidden rounded-[32px] shadow-xl">
-            <img
-              src="src/assets/dentista.png"
-              alt="Equipe da clínica odontológica"
-              className="h-[520px] w-full object-cover"
-            />
+           <img
+            src={dentistaImg}
+            alt="Equipe da clínica odontológica"
+            className="h-[520px] w-full object-cover"
+          />
           </div>
 
           <div className="absolute -bottom-6 -right-4 rounded-2xl bg-cyan-600 px-6 py-5 text-white shadow-lg">
